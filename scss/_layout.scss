@@ -1,0 +1,516 @@
+.left-img {
+    width: 300px;
+}
+
+.navbar {
+    position: relative;
+    z-index: 200;
+
+    &-navigation {
+        display: flex;
+
+        &-left {
+            width: 50vw;
+            height: 100vh;
+            background-color: $color-dark;
+            position: fixed;
+            left: -50vw;
+            transition: left .8s cubic-bezier(1, 0, 0, 1);
+
+            .left-img {
+                width: 50%;
+                position: absolute;
+                box-shadow: 0 15px 60px rgba($color-black, .4);
+                opacity: .7;
+                border-radius: 5px;
+            }
+
+            .left-img-1 {
+                top: 15%;
+                left: 15%;
+            }
+
+            .left-img-2 {
+                top: 35%;
+                left: 25%;
+            }
+
+            .left-img-3 {
+                top: 55%;
+                left: 35%;
+            }
+        }
+
+        &-right {
+            width: 50vw;
+            height: 100vh;
+            background-color: #1f1d1d;
+            position: fixed;
+            right: -50vw;
+            @include flexLayout;
+            transition: right .8s cubic-bezier(1, 0, 0, 1);
+
+        }
+
+        .nav-list {
+            &-item {
+                list-style: none;
+            }
+
+            &-link {
+                font-family: $font-dancingScript;
+                font-size: 50px;
+                @include textStyles(capitalize);
+                color: $color-secondary;
+                text-decoration: none;
+                display: block;
+                margin: 20px;
+                text-align: center;
+                transition: all .5s;
+
+                &:hover {
+                    color: $color-primary;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+    }
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+    left: 0;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+    right: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+    transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+    transform: rotateZ(-40deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+    opacity: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+    transform: rotateZ(40deg);
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba($color-black, .8), rgba($color-black, .6)), url(../images/ganesha2.jpg) center repeat;
+    background-size: cover;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        color: white;
+        @include topAbsolute(15%);
+    }
+
+    /* here & indicates its parent element so instead of using .header .banner we can use as following  */
+    &-banner {
+        @include topAbsolute(50%);
+        text-align: center;
+    }
+
+    .poojas {
+        width: 100%;
+        font-family: $font-nuninto;
+        @include bottomAbsolute(10px);
+    }
+
+    .poojas ul {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .poojas ul li {
+        border: 1px solid $color-primary;
+        list-style: none;
+        margin: 10px;
+    }
+
+
+    .poojas ul li a {
+        display: inline-flex;
+        height: 30px;
+        padding: 7px 5px 0px 5px;
+        color: $color-secondary;
+        transition: all .4s;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-dark;
+        }
+    }
+
+
+}
+
+.utsav-poster {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+
+    &-left {
+        width: 40%;
+    }
+
+    img {
+        width: 100%;
+        opacity: .7;
+    }
+
+    &-right {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 100px;
+        box-sizing: border-box;
+        
+        .main-heading{
+            @include headingMainStyle;
+            font-size: 40px;
+        }
+        
+        .sub-heading{
+            @include headingSubStyle;
+            font-size: 15px;
+        }
+
+        .stars {
+            margin: 30px 0;
+        }
+
+        .star {
+            font-size: 15px;
+            color: $color-primary;
+            margin-lefet: 10px;
+        }
+
+        .description {
+            font-family: $font-josefinSans;
+            font-size: 25px;
+            color: $color-secondary;
+            font-size: italic;
+            text-align: justify;
+            line-height: 32px;
+
+            &::first-letter {
+                padding-left: 50px;
+            }
+            
+            @media(max-width:1600px){
+               font-size:18px;
+            }
+        }
+    }
+
+}
+
+
+.gallery {
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.highlight-content {
+    margin: 40px 0px;
+    padding-top: 30px;
+
+    &-row {
+        flex-direction: row;
+        @include flexLayout;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &-column {
+            width: 30.33%;
+            padding: 4%;
+            margin: 1%;
+            box-sizing: border-box;
+            border-radius: 20px;
+            box-shadow: 5px 10px $color-secondary;
+            background: $color-primary;
+
+            &-hd {
+                font-family: $font-josefinSans;
+                font-size: 25px;
+                font-weight: 400;
+                color: $color-black;
+            }
+
+            &-para {
+                font-size: 16px;
+                line-height: 22px;
+                font-family: $font-nuninto;
+                color: $color-dark;
+                padding-bottom: 20px;
+            }
+        }
+
+    }
+
+
+
+}
+
+.seperator {
+    height: 20px;
+    background-color: $color-primary;
+}
+
+.utsav-poster-2 {
+    display: flex;
+    align-items: center;
+
+    &-left {
+        width: 40%;
+    }
+
+    img {
+        width: 100%;
+        opacity: .7;
+    }
+
+    &-right {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 100px;
+        box-sizing: border-box;
+        
+         .main-heading{
+            @include headingMainStyle;
+            font-size: 40px;
+        }
+        
+        .sub-heading{
+            @include headingSubStyle;
+            font-size: 15px;
+        }
+
+        .stars {
+            margin: 30px 0;
+        }
+
+        .star {
+            font-size: 15px;
+            color: $color-primary;
+            margin-lefet: 10px;
+        }
+
+        .description {
+            font-family: $font-josefinSans;
+            font-size: 25px;
+            color: $color-secondary;
+            font-size: italic;
+            text-align: justify;
+            line-height: 32px;
+
+            &::first-letter {
+                padding-left: 50px;
+            }
+        }
+    }
+
+}
+
+
+.utsav-poster-3 {
+    display: flex;
+    align-items: center;
+
+    &-right {
+        width: 60%;
+    }
+
+    img {
+        width: 100%;
+        opacity: .7;
+    }
+
+    &-left {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 100px;
+        box-sizing: border-box;
+        
+         .main-heading{
+            @include headingMainStyle;
+            font-size: 40px;
+        }
+        
+        .sub-heading{
+            @include headingSubStyle;
+            font-size: 15px;
+        }
+
+        .stars {
+            margin: 30px 0;
+        }
+
+        .star {
+            font-size: 15px;
+            color: $color-primary;
+            margin-lefet: 10px;
+        }
+
+        .description {
+            font-family: $font-josefinSans;
+            font-size: 25px;
+            color: $color-secondary;
+            font-size: italic;
+            text-align: justify;
+            line-height: 32px;
+
+            &::first-letter {
+                padding-left: 50px;
+            }
+        }
+    }
+
+}
+
+
+.contact{
+    @include flexLayout;
+    justify-content: space-around;
+    padding:50px;
+    flex-direction: column;
+    text-align: left;
+    background-color: $color-dark;
+
+    
+    &-hd{
+        color: $color-primary;
+        font-size: 30px;
+        font-family: $font-josefinSans;
+    }
+    &-form{
+         font-family: $font-nuninto;
+            font-size: 15px;
+            color: $color-secondary;
+            text-align: justify;
+            line-height: 22px;
+    }
+
+}
+
+
+
+.bottom-links {
+    padding:20px 10px 0px 20px;
+    background-color: $color-lightdark;
+    &-hd{
+        color: $color-primary;
+        font-size: 20px;
+        font-family: $font-josefinSans;
+        
+    }
+    &-row {
+        flex-direction: row;
+        @include flexLayout;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+
+
+        &-column {
+            width: 22%;
+            padding: 2%;
+            box-sizing: border-box;
+            align-self: center;
+
+            &-hd {
+                font-family: $font-josefinSans;
+                font-size: 20px;
+                font-weight: 400;
+                color: $color-primary;
+            }
+
+            &-list {}
+
+            &-item {
+                @include listStyles;
+                line-height: 30px;
+            }
+
+            &-item a {
+                font-size: 16px;
+                color: $color-secondary;
+                display: block;
+            }
+
+
+        }
+    }
+
+}
+
+
+
+.footer {
+    padding: 70px 0;
+    @include flexLayout;
+    flex-direction: column;
+    background-color: $color-dark;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 7px;
+    }
+
+    .social-media {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        margin-top: 20px;
+
+        &-item {
+            list-style: none;
+        }
+
+        &-link {
+            text-decoration: none;
+            font-size: 50px;
+            color: $color-secondary;
+            transition: color .7s;
+
+            &:hover {
+                color: $color-primary;
+
+            }
+        }
+    }
+
+    &-copyright-paragraph {
+        font-family: $font-josefinSans;
+        font-size: 18px;
+        color: $color-secondary;
+        @include textStyles(capitalize);
+    }
+}

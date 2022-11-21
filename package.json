@@ -1,0 +1,19 @@
+{
+  "name": "hindu_devotion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass -o css scss -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlpreddy/css-sass-hindu-devotion-html-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vlpreddy/css-sass-hindu-devotion-html-template/issues"
+  },
+  "homepage": "https://github.com/vlpreddy/css-sass-hindu-devotion-html-template#readme"
+}

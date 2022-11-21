@@ -1,0 +1,548 @@
+.hamburger-menu .menu, .card-overlay, .card-img {
+  width: 100%;
+  height: 100%; }
+
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background-color: black; }
+
+.left-img {
+  width: 300px; }
+
+.navbar {
+  position: relative;
+  z-index: 200; }
+  .navbar-navigation {
+    display: flex; }
+    .navbar-navigation-left {
+      width: 50vw;
+      height: 100vh;
+      background-color: #262626;
+      position: fixed;
+      left: -50vw;
+      transition: left 0.8s cubic-bezier(1, 0, 0, 1); }
+      .navbar-navigation-left .left-img {
+        width: 50%;
+        position: absolute;
+        box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
+        opacity: .7;
+        border-radius: 5px; }
+      .navbar-navigation-left .left-img-1 {
+        top: 15%;
+        left: 15%; }
+      .navbar-navigation-left .left-img-2 {
+        top: 35%;
+        left: 25%; }
+      .navbar-navigation-left .left-img-3 {
+        top: 55%;
+        left: 35%; }
+    .navbar-navigation-right {
+      width: 50vw;
+      height: 100vh;
+      background-color: #1f1d1d;
+      position: fixed;
+      right: -50vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.8s cubic-bezier(1, 0, 0, 1); }
+    .navbar-navigation .nav-list-item {
+      list-style: none; }
+    .navbar-navigation .nav-list-link {
+      font-family: "Dancing Script", cursive;
+      font-size: 50px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      color: #bbb;
+      text-decoration: none;
+      display: block;
+      margin: 20px;
+      text-align: center;
+      transition: all .5s; }
+      .navbar-navigation .nav-list-link:hover {
+        color: #d3ab55;
+        letter-spacing: 4px; }
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+  left: 0; }
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+  right: 0; }
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  transform: rotateZ(90deg); }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotateZ(-40deg); }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0; }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotateZ(40deg); }
+
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(../images/ganesha2.jpg) center repeat;
+  background-size: cover;
+  /* here & indicates its parent element so instead of using .header .banner we can use as following  */ }
+  .header .brand {
+    display: flex;
+    align-items: center;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 15%; }
+  .header-banner {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    text-align: center; }
+  .header .poojas {
+    width: 100%;
+    font-family: "Nunito", sanserif;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 10px; }
+  .header .poojas ul {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; }
+  .header .poojas ul li {
+    border: 1px solid #d3ab55;
+    list-style: none;
+    margin: 10px; }
+  .header .poojas ul li a {
+    display: inline-flex;
+    height: 30px;
+    padding: 7px 5px 0px 5px;
+    color: #bbb;
+    transition: all .4s;
+    text-decoration: none; }
+    .header .poojas ul li a:hover {
+      background-color: #d3ab55;
+      color: #262626; }
+
+.utsav-poster {
+  height: 90vh;
+  display: flex;
+  align-items: center; }
+  .utsav-poster-left {
+    width: 40%; }
+  .utsav-poster img {
+    width: 100%;
+    opacity: .7; }
+  .utsav-poster-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 100px;
+    box-sizing: border-box; }
+    .utsav-poster-right .main-heading {
+      color: #d3ab55;
+      font-family: "Dancing Script", cursive;
+      font-size: 40px; }
+    .utsav-poster-right .sub-heading {
+      color: #bbb;
+      font-size: 16px;
+      font-family: "Nunito", sanserif;
+      font-size: 15px; }
+    .utsav-poster-right .stars {
+      margin: 30px 0; }
+    .utsav-poster-right .star {
+      font-size: 15px;
+      color: #d3ab55;
+      margin-lefet: 10px; }
+    .utsav-poster-right .description {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 25px;
+      color: #bbb;
+      font-size: italic;
+      text-align: justify;
+      line-height: 32px; }
+      .utsav-poster-right .description::first-letter {
+        padding-left: 50px; }
+      @media (max-width: 1600px) {
+        .utsav-poster-right .description {
+          font-size: 18px; } }
+
+.gallery .cards-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
+.highlight-content {
+  margin: 40px 0px;
+  padding-top: 30px; }
+  .highlight-content-row {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; }
+    .highlight-content-row-column {
+      width: 30.33%;
+      padding: 4%;
+      margin: 1%;
+      box-sizing: border-box;
+      border-radius: 20px;
+      box-shadow: 5px 10px #bbb;
+      background: #d3ab55; }
+      .highlight-content-row-column-hd {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 25px;
+        font-weight: 400;
+        color: black; }
+      .highlight-content-row-column-para {
+        font-size: 16px;
+        line-height: 22px;
+        font-family: "Nunito", sanserif;
+        color: #262626;
+        padding-bottom: 20px; }
+
+.seperator {
+  height: 20px;
+  background-color: #d3ab55; }
+
+.utsav-poster-2 {
+  display: flex;
+  align-items: center; }
+  .utsav-poster-2-left {
+    width: 40%; }
+  .utsav-poster-2 img {
+    width: 100%;
+    opacity: .7; }
+  .utsav-poster-2-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 100px;
+    box-sizing: border-box; }
+    .utsav-poster-2-right .main-heading {
+      color: #d3ab55;
+      font-family: "Dancing Script", cursive;
+      font-size: 40px; }
+    .utsav-poster-2-right .sub-heading {
+      color: #bbb;
+      font-size: 16px;
+      font-family: "Nunito", sanserif;
+      font-size: 15px; }
+    .utsav-poster-2-right .stars {
+      margin: 30px 0; }
+    .utsav-poster-2-right .star {
+      font-size: 15px;
+      color: #d3ab55;
+      margin-lefet: 10px; }
+    .utsav-poster-2-right .description {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 25px;
+      color: #bbb;
+      font-size: italic;
+      text-align: justify;
+      line-height: 32px; }
+      .utsav-poster-2-right .description::first-letter {
+        padding-left: 50px; }
+
+.utsav-poster-3 {
+  display: flex;
+  align-items: center; }
+  .utsav-poster-3-right {
+    width: 60%; }
+  .utsav-poster-3 img {
+    width: 100%;
+    opacity: .7; }
+  .utsav-poster-3-left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 100px;
+    box-sizing: border-box; }
+    .utsav-poster-3-left .main-heading {
+      color: #d3ab55;
+      font-family: "Dancing Script", cursive;
+      font-size: 40px; }
+    .utsav-poster-3-left .sub-heading {
+      color: #bbb;
+      font-size: 16px;
+      font-family: "Nunito", sanserif;
+      font-size: 15px; }
+    .utsav-poster-3-left .stars {
+      margin: 30px 0; }
+    .utsav-poster-3-left .star {
+      font-size: 15px;
+      color: #d3ab55;
+      margin-lefet: 10px; }
+    .utsav-poster-3-left .description {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 25px;
+      color: #bbb;
+      font-size: italic;
+      text-align: justify;
+      line-height: 32px; }
+      .utsav-poster-3-left .description::first-letter {
+        padding-left: 50px; }
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+  flex-direction: column;
+  text-align: left;
+  background-color: #262626; }
+  .contact-hd {
+    color: #d3ab55;
+    font-size: 30px;
+    font-family: "Josefin Sans", sans-serif; }
+  .contact-form {
+    font-family: "Nunito", sanserif;
+    font-size: 15px;
+    color: #bbb;
+    text-align: justify;
+    line-height: 22px; }
+
+.bottom-links {
+  padding: 20px 10px 0px 20px;
+  background-color: #242424; }
+  .bottom-links-hd {
+    color: #d3ab55;
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif; }
+  .bottom-links-row {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center; }
+    .bottom-links-row-column {
+      width: 22%;
+      padding: 2%;
+      box-sizing: border-box;
+      align-self: center; }
+      .bottom-links-row-column-hd {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #d3ab55; }
+      .bottom-links-row-column-item {
+        list-style: none;
+        line-height: 30px; }
+      .bottom-links-row-column-item a {
+        font-size: 16px;
+        color: #bbb;
+        display: block; }
+
+.footer {
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #262626; }
+  .footer-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px; }
+  .footer .social-media {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 20px; }
+    .footer .social-media-item {
+      list-style: none; }
+    .footer .social-media-link {
+      text-decoration: none;
+      font-size: 50px;
+      color: #bbb;
+      transition: color .7s; }
+      .footer .social-media-link:hover {
+        color: #d3ab55; }
+  .footer-copyright-paragraph {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    color: #bbb;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: capitalize; }
+
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  z-index: 300; }
+  .hamburger-menu .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: transform .5s; }
+    .hamburger-menu .menu-line {
+      width: 100%;
+      height: 4px;
+      background-color: #d3ab55;
+      transform-origin: right;
+      transition: all .5s .5s; }
+
+.logo {
+  width: 150px;
+  height: 150px;
+  color: #d3ab55;
+  border: 3px solid #d3ab55;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.logo-img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%; }
+
+/* styles for commented html part under logo section
+.main-name{
+    font-family: $font-nunite;
+    font-size:50px;
+    color:$color-secondary;
+    @include textStyles;
+}
+
+.sub-name{
+    font-family: $font-josefinSans;
+    font-size:18px;
+    color:$color-secondary;
+    text-align: center;
+    @include textStyles;
+}
+*/
+.main-heading {
+  font-family: "Dancing Script", cursive;
+  font-size: 100px;
+  font-weight: 300;
+  color: #d3ab55;
+  margin-bottom: 40px; }
+  @media (max-width: 1600px) {
+    .main-heading {
+      font-size: 80px; } }
+
+.sub-heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  color: #bbb;
+  margin-bottom: 80px;
+  text-align: center; }
+  @media (max-width: 1600px) {
+    .sub-heading {
+      font-size: 50px;
+      margin-bottom: 50px; } }
+  @media (max-width: 1300px) {
+    .sub-heading {
+      font-size: 40px;
+      margin-bottom: 30px; } }
+
+.main-btn {
+  width: 170px;
+  height: 45px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #d3ab55;
+  background-color: transparent;
+  border: 1px solid #d3ab55;
+  outline: none;
+  cursor: pointer;
+  transition: all .4s; }
+  .main-btn:hover {
+    background-color: #d3ab55;
+    color: #262626; }
+
+.btn-type-2 {
+  width: 170px;
+  height: 45px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #262626;
+  background-color: transparent;
+  border: 1px solid #262626;
+  outline: none;
+  cursor: pointer;
+  transition: all .4s; }
+  .btn-type-2:hover {
+    background-color: #d3ab55;
+    color: #262626; }
+
+.card {
+  width: 33%;
+  height: 30vh;
+  position: relative;
+  overflow: hidden; }
+  .card:hover .card-overlay {
+    left: 0; }
+  .card-overlay {
+    top: 0;
+    left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(211, 171, 85, 0.6);
+    color: #fff;
+    z-index: 20;
+    transition: left .7s; }
+    .card-overlay-heading {
+      font-family: "Nunito", sanserif;
+      font-size: 50px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize; }
+    .card-overlay-paragraph {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize; }
+    .card-overlay-btn {
+      width: 150px;
+      height: 40px;
+      color: #d3ab55;
+      background-color: #fff;
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid #d3ab55;
+      border-radius: 30px;
+      outline: none;
+      cursor: pointer; }
+  .card-img {
+    object-fit: cover;
+    opacity: .7; }
